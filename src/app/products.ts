@@ -12,6 +12,7 @@ export const products = [
       'sample text 2 sample text 2 sample text 2 sample text 2 sample text 2 sample text 2 ',
     headingText3:
       'sample text 3 sample text 3 sample text 3 sample text 3 sample text 3 sample text 3 ',
+    coverImage: './assets/images/placeholder.jpg',
   },
   {
     name: 'Phone Mini',
@@ -26,6 +27,7 @@ export const products = [
       'sample text 2 sample text 2 sample text 2 sample text 2 sample text 2 sample text 2 ',
     headingText3:
       'sample text 3 sample text 3 sample text 3 sample text 3 sample text 3 sample text 3 ',
+    coverImage: './assets/images/placeholder.jpg',
   },
   {
     name: 'Phone Standard',
@@ -40,6 +42,7 @@ export const products = [
       'sample text 2 sample text 2 sample text 2 sample text 2 sample text 2 sample text 2 ',
     headingText3:
       'sample text 3 sample text 3 sample text 3 sample text 3 sample text 3 sample text 3 ',
+    coverImage: './assets/images/placeholder.jpg',
   },
   {
     name: 'iPhone 12',
@@ -54,5 +57,6 @@ export const products = [
       'sample text 2 sample text 2 sample text 2 sample text 2 sample text 2 sample text 2 ',
     headingText3:
       'sample text 3 sample text 3 sample text 3 sample text 3 sample text 3 sample text 3 ',
+    coverImage: './assets/images/placeholder.jpg',
   },
 ];
