@@ -11,7 +11,7 @@ mongoose
   })
   .then(() => {
     const fakeDB = new FakeDb();
-    fakeDB.seeDb();
+    fakeDB.initDb();
   });
 
 app.get("/products", function (req, res) {

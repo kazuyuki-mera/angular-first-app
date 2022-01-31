@@ -65,15 +65,20 @@ class FakeDb {
     ];
   }
 
+  async initDb() {
+    await this.cleanDb();
+    this.pushProductsToDb();
+  }
+
+  async cleanDb() {
+    await Product.deleteMany({});
+  }
+
   pushProductsToDb() {
     this.products.forEach((product) => {
       const newProduct = new Product(product);
       newProduct.save();
     });
-  }
-
-  seeDb() {
-    this.pushProductsToDb();
   }
 }
 
