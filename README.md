@@ -1,27 +1,18 @@
-# AngularFirstApp
+# ハンズオンで学ぶ 【Angular と Node.js で始める】JavaScript 系 WEB アプリケーション開発コンプリートガイド ①
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.4.
+## 学習内容
 
-## Development server
+Git の基本的な使い方から SPA・フロントエンド〜バックエンド開発を一気に学べる！さらに最先端の NoSQL による DB 構築方法、Heroku による WEB サーバー構築＆デプロイ手法を学び、WEB エンジニアリングで必要な知識を身につけよう！
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- ターミナルの基本的な使い方と簡単なカスタマイズ方法
+- Angular cli を用いたフロントエンド WEB アプリケーション開発の基礎
+- Angular Router を使った SPA（シングル・ページ・アプリケーション）開発方法
+- Nodejs と NoSQL（MongoDB）を使ったバックエンドサーバー構築
+- Heroku を用いた WEB サーバー構築と Deploy（デプロイ）方法
 
-## Code scaffolding
+- Angular: 11.1.4
+- Node: 14.15.5
+- Express
+- bootstrap: 4.3.1
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+URL:https://www.udemy.com/course/angular-nodejs-web/
