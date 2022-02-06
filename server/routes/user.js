@@ -9,6 +9,9 @@ router.post("/login", function (req, res) {
 });
 
 router.post("/register", function (req, res) {
+  const username = req.body.username;
+  const email = req.body.email;
+  const password = req.body.password;
   // const productId = req.params.productId;
   // product.findById(productId, function (err, foundProduct) {
   //   if (err) {
@@ -16,7 +19,7 @@ router.post("/register", function (req, res) {
   //       errors: [{ title: "Product error" }, { detail: "Product not found" }],
   //     });
   //   }
-  //   return res.json(foundProduct);
+  return res.json({ username, email, password });
   // });
 });
 

@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
 const config = require("./config/dev");
 const FakeDb = require("./fake-db");
 
@@ -17,7 +18,7 @@ mongoose
   });
 
 const app = express();
-
+app.use(bodyParser.json());
 app.use("/api/v1/products", productRoutes);
 app.use("/api/v1/users", userRoutes);
 
