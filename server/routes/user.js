@@ -11,26 +11,43 @@ router.post("/register", function (req, res) {
   const confirmPassword = req.body.confirmPassword;
 
   if (!userName) {
-    // Invalid Error
+    return res.status(422).send({
+      errors: [{ title: "User error" }, { detail: "Please fill userName" }],
+    });
   }
   if (!email) {
-    // Invalid Error
+    return res.status(422).send({
+      errors: [{ title: "User error" }, { detail: "Please fill email" }],
+    });
   }
   if (!password) {
-    // Invalid Error
+    return res.status(422).send({
+      errors: [{ title: "User error" }, { detail: "Please fill password" }],
+    });
   }
   if (password !== confirmPassword) {
-    // Invalid Error
+    return res.status(422).send({
+      errors: [{ title: "User error" }, { detail: "Please check password" }],
+    });
   }
 
   User.findOne({ email }, function (err, foundUser) {
+    if (err) {
+      return res.status(422).send({
+        errors: [{ title: "User error" }, { detail: "Something went wrong" }],
+      });
+    }
     if (foundUser) {
-      // Invalid Error
+      return res.status(422).send({
+        errors: [{ title: "User error" }, { detail: "User already exist" }],
+      });
     }
     const user = new User({ userName, email, password });
     user.save(function (err) {
       if (err) {
-        // Error Message
+        return res.status(422).send({
+          errors: [{ title: "User error" }, { detail: "Something went wrong" }],
+        });
       }
       return res.json({ registered: true });
     });
