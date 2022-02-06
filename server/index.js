@@ -4,6 +4,7 @@ const config = require("./config/dev");
 const FakeDb = require("./fake-db");
 
 const productRoutes = require("./routes/products");
+const userRoutes = require("./routes/user");
 
 mongoose
   .connect(config.DB_URI, {
@@ -18,6 +19,7 @@ mongoose
 const app = express();
 
 app.use("/api/v1/products", productRoutes);
+app.use("/api/v1/users", userRoutes);
 
 const PORT = process.env.PORT | "3001";
 
