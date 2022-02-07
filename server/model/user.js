@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const bcrypt = require("bcrypt");
 
 const UserSchema = new Schema({
   userName: {
@@ -20,6 +21,18 @@ const UserSchema = new Schema({
     min: [6, "60文字以上で入力してください"],
     max: [30, "最大30文字までです"],
   },
+});
+
+UserSchema.pre("save", function (next) {
+  const user = this;
+  const saltRounds = 10;
+
+  bcrypt.genSalt(saltRounds, function (err, salt) {
+    bcrypt.hash(user.password, salt, function (err, hash) {
+      user.password = hash;
+      next();
+    });
+  });
 });
 
 module.exports = mongoose.model("User", UserSchema);
