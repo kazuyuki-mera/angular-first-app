@@ -24,7 +24,7 @@ router.post("/login", function (req, res) {
     }
     if (!foundUser) {
       return res.status(422).send({
-        errors: [{ title: "User error" }, { detail: "User already exist" }],
+        errors: [{ title: "User error" }, { detail: "User is not exist" }],
       });
     }
     if (!foundUser.hasSamePassword(password)) {
