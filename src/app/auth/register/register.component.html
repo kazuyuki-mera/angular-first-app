@@ -26,7 +26,11 @@
                 <i class="fa fa-twitter"></i>
               </a>
             </div>
-            <form class="register-form">
+            <form
+              class="register-form"
+              #registerForm="ngForm"
+              (ngSubmit)="register(registerForm)"
+            >
               <label>Eメール</label>
               <div
                 class="input-group form-group-no-border"
@@ -39,6 +43,8 @@
                 </div>
 
                 <input
+                  ngModel
+                  name="email"
                   type="text"
                   class="form-control"
                   placeholder="Eメール"
@@ -65,7 +71,9 @@
                   (blur)="focus1 = false"
                 />
               </div>
-              <button class="btn btn-danger btn-block btn-round">登録</button>
+              <button class="btn btn-danger btn-block btn-round" type="submit">
+                登録
+              </button>
             </form>
             <div class="forgot">
               <a [routerLink]="['/login']" class="btn btn-link btn-danger"
