@@ -50,6 +50,7 @@
                   placeholder="Eメール"
                   (focus)="focus = true"
                   (blur)="focus = false"
+                  required
                 />
               </div>
 
@@ -71,9 +72,14 @@
                   placeholder="パスワード"
                   (focus)="focus1 = true"
                   (blur)="focus1 = false"
+                  required
                 />
               </div>
-              <button class="btn btn-danger btn-block btn-round" type="submit">
+              <button
+                class="btn btn-danger btn-block btn-round"
+                type="submit"
+                [disabled]="!registerForm.valid"
+              >
                 登録
               </button>
             </form>
