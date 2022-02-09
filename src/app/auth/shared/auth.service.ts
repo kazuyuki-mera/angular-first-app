@@ -9,7 +9,7 @@ export class AuthService {
   //   return this.http.get('/api/v1/products');
   // }
 
-  // getProductById(productId: string): Observable<any> {
-  //   return this.http.get('/api/v1/products/' + productId);
-  // }
+  register(userData: any): Observable<any> {
+    return this.http.post('/api/v1/users/register', userData);
+  }
 }
