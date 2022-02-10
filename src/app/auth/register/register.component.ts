@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../shared/auth.service';
 
@@ -7,7 +8,7 @@ import { AuthService } from '../shared/auth.service';
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
-  test: Date = new Date();
+  errors: any = [];
 
   constructor(private authService: AuthService) {}
 
@@ -18,8 +19,9 @@ export class RegisterComponent implements OnInit {
       (result) => {
         console.log('Success');
       },
-      (err) => {
+      (err: HttpErrorResponse) => {
         console.error(err);
+        this.errors = err.error.errors;
       }
     );
   }

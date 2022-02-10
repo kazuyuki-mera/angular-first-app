@@ -108,6 +108,10 @@
                 登録
               </button>
             </form>
+            <br />
+            <div *ngIf="errors && errors.length > 0" class="alert alert-danger">
+              <p *ngFor="let error of errors">{{ error.detail }}</p>
+            </div>
             <div class="forgot">
               <a [routerLink]="['/login']" class="btn btn-link btn-danger"
                 >ログインはこちら</a
