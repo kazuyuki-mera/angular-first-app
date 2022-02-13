@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import * as moment from 'moment';
+import { Router } from '@angular/router';
 
 const jwt = new JwtHelperService();
 
@@ -15,9 +16,13 @@ class DecodeToken {
 @Injectable()
 export class AuthService {
   private decodedToken;
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
     this.decodedToken =
       JSON.parse(localStorage.getItem('app-meta')) || new DecodeToken();
+  }
+
+  getToken() {
+    return localStorage.getItem('app-auth');
   }
 
   isAuthenticated() {
@@ -42,5 +47,6 @@ export class AuthService {
     localStorage.removeItem('app-auth');
     localStorage.removeItem('app-meta');
     this.decodedToken = new DecodeToken();
+    this.router.navigate(['/login']);
   }
 }
