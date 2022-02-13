@@ -3,7 +3,9 @@ const User = require("../model/user");
 const config = require("./config");
 
 function notAuthorization(res) {
-  return "Error message";
+  return res.status(401).send({
+    errors: [{ title: "Not Authorized" }, { detail: "You need to login" }],
+  });
 }
 
 exports.authMiddleware = function (req, res, next) {
@@ -13,14 +15,20 @@ exports.authMiddleware = function (req, res, next) {
   }
   jwt.verify(token, config.SECRET, function (err, decodedToken) {
     if (err) {
-      return "Error";
+      return res.status(401).send({
+        errors: [{ title: "Not Authorized" }, { detail: "Invalid token" }],
+      });
     }
     User.findById(decodedToken.userId, function (err, foundUser) {
       if (err) {
-        return "Error";
+        return res.status(401).send({
+          errors: [{ title: "Not Authorized" }, { detail: "Invalid token" }],
+        });
       }
       if (!foundUser) {
-        return "Error";
+        return res.status(401).send({
+          errors: [{ title: "Not Authorized" }, { detail: "Invalid token" }],
+        });
       }
       next();
     });
