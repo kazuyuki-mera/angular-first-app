@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 const User = require("../model/user");
-const config = require("./config");
+const config = require("../config/dev");
 
 function notAuthorization(res) {
   return res.status(401).send({
@@ -13,7 +13,7 @@ exports.authMiddleware = function (req, res, next) {
   if (!token) {
     return notAuthorization(res);
   }
-  jwt.verify(token, config.SECRET, function (err, decodedToken) {
+  jwt.verify(token.split(" ")[1], config.SECRET, function (err, decodedToken) {
     if (err) {
       return res.status(401).send({
         errors: [{ title: "Not Authorized" }, { detail: "Invalid token" }],
