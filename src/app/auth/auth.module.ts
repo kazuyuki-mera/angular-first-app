@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { AuthGuard } from './shared/auth.guard';
 import { AuthService } from './shared/auth.service';
 
 const routes: Routes = [
@@ -14,7 +15,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [LoginComponent, RegisterComponent],
   imports: [RouterModule.forChild(routes), CommonModule, FormsModule],
-  providers: [AuthService],
+  providers: [AuthGuard, AuthService],
   bootstrap: [],
 })
 export class AuthModule {}
