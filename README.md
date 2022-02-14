@@ -16,3 +16,24 @@ Git の基本的な使い方から SPA・フロントエンド〜バックエン
 - bootstrap: 4.3.1
 
 URL:https://www.udemy.com/course/angular-nodejs-web/
+
+---
+
+# 続【Angular と Node.js で始める】JavaScript 系 WEB アプリケーション開発コンプリートガイド ②
+
+## 学習内容
+
+ngForm の使い方から入力データを NoSQL データベース(MongoDB)へ保存、ログイン時に JWT トークン発行など本番稼働を想定た本格 Web アプリ開発のノウハウを一通り学べる！フローチャート設計からデバッグ手法も合わせて一気に学ぼう！
+
+- Angular ngForm を使った入力フォームの実装方法
+- 新規会員登録・ログインフォームの要件定義の方法
+- ngForm からの入力データを Node サーバー側で受け取り処理させる方法
+- JWT（JSON Web Token）を用いたログイン認証方法
+- AuthGuard（認証ガード）を使った「会員限定閲覧ページ」の実装方法
+
+- Angular: 11.1.4
+- Node: 14.15.5
+- Express
+- bootstrap: 4.3.1
+
+URL:https://www.udemy.com/course/angular-nodejs-javascript-web/
